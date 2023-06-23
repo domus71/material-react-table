@@ -346,7 +346,7 @@ export const columnOptions: ColumnOption[] = [
     linkText: '',
     source: 'MRT',
     required: false,
-    type: "'text' | 'select' | 'multi-select' | 'range'",
+    type: "'text' | 'select' | 'multi-select' | 'range' | 'range-slider' | 'checkbox'",
   },
   {
     columnOption: 'getGroupingValue',
@@ -490,6 +490,16 @@ export const columnOptions: ColumnOption[] = [
     type: 'Checkbox | ({ column, table }) => CheckboxProps',
   },
   {
+    columnOption: 'muiTableHeadCellFilterSliderProps',
+    defaultValue: '',
+    description: '',
+    link: 'https://mui.com/material-ui/api/slider/#props',
+    linkText: 'Material UI Slider Props',
+    required: false,
+    source: 'Material UI',
+    type: 'SliderProps | ({ column, table}) => SliderProps',
+  },
+  {
     columnOption: 'muiTableHeadCellFilterTextFieldProps',
     defaultValue: '',
     description: '',
@@ -555,9 +565,9 @@ export const columnOptions: ColumnOption[] = [
     description: '',
     link: '',
     linkText: '',
-    source: 'MRT',
     required: false,
-    type: '',
+    source: '',
+    type: '({ closeMenu, column, internalColumnMenuItems, table }) => ReactNode[]',
   },
   {
     columnOption: 'renderColumnFilterModeMenuItems',

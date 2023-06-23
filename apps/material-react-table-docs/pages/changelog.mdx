@@ -1,23 +1,56 @@
 import Head from 'next/head';
 
 <Head>
-  <title>Changelog and Roadmap - Material React Table Docs</title>
+  <title>V1 Changelog and Roadmap - Material React Table Docs</title>
   <meta
     name="description"
-    content="Material React Table Changelog and Roadmap for future development"
+    content="Material React Table V1 Changelog and Roadmap for future development"
   />
 </Head>
+
+## Roadmap
+
+### Version 1 Roadmap (2022-2023)
+
+As of June 2023, most feature development is complete for MRT Version 1. MRT Version 2 is actively being developed. Some V1 bugs may still get fixed.
+
+### Version 2 Roadmap (July 2023)
+
+Version 2 should be released by July 2023. Some features and changes will include:
+
+- Support for mostly keeping all of your MRT V1 code the same, but some props will be renamed for more conciseness and consistency.
+- New `useMaterialReactTable` hook to replace `tableInstanceRef`. The full table instance will be available to you to build around more than just the MRT components.
+- All internal MRT Components will be exported from MRT for you to optionally build up your own table UI for advanced use cases. Custom Toolbars will be much easier to build with a smaller bundle size too.
+- New built-in Date Filters, and other advanced filtering and editing variants.
 
 ## Changelog
 
 ### Version 1 (Latest)
+
+#### v1.14.0 (2023-06-17) - The Custom Column Actions Update
+
+- Added no translations that can be imported from `'material-react-table/locales/no'`
+- Added new `internalColumnMenuItems` param in the `renderColumnActionsMenuItems` prop/column option for rendering custom column actions menu items
+- Fixed `renderColumnActionsMenuItems` prop not replacing all default column actions menu items
+- Fixed "Clear Filter" menu item not being disabled when no filter is applied for range filters
+- Fixed issues with faceted values not being re-calculated when data changes in filter components
+
+#### v1.13.1 (2023-06-15)
+
+- Fixed issue with `getFacetedMinMaxValues` sometimes returning the wrong data type for the min/max values for range-slider filters
+
+#### v1.13.0 (2023-06-14) - The Faceted Values Update
+
+- Added new `'range-slider'` filter variant using the MUI `Slider` component
+- Added the `enableFacetedValues` prop to allow for generating faceted values from the data under the hood
+- Small performance improvements by only using certain row models under the hood when certain features are enabled (e.g. no `getSortedRowModel()` when sorting is disabled)
 
 #### v1.12.1 (2023-06-12)
 
 - Fixed new Next.js key prop warning in console
 - Upgraded to latest TanStack Table v8.9.2
 
-#### v1.12.0 (2023-05-29)
+#### v1.12.0 (2023-05-29) - The Comply with Rollup Update
 
 - Added `MaterialReactTable` as a named export and gave a deprecation warning for the default export (will still work but will be removed in v2). This was done in order to comply with rollup bundling best practices.
 
@@ -49,7 +82,7 @@ import Head from 'next/head';
 - update it and nl locales grammar
 - tweaked how column actions "filter by" menu menu item behaves
 
-#### v1.11.0 (2023-04-24)
+#### v1.11.0 (2023-04-24) - The Less Ugly Column Actions Update
 
 - Removed Column Actions Submenu for "Show all Columns" Menu Item (was complicated unnecessary UI)
 - Disabled Column Actions Filter By Menu Item when columns are already visible
@@ -58,7 +91,7 @@ import Head from 'next/head';
 - Added id translations that can be imported from `'material-react-table/locales/id'`
 - Added fi translations that can be imported from `'material-react-table/locales/fi'`
 
-#### v1.10.0 (2023-04-16)
+#### v1.10.0 (2023-04-16) - The Empty Data Message Update
 
 - New highly requested `renderEmptyRowsFallback` prop for rendering custom JSX when there are no rows to display
 - Added `staticRowIndex` param to `muiTableBodyRowProps` to make styling striped virtual rows easier
@@ -89,7 +122,7 @@ import Head from 'next/head';
 - gave hovered selected rows a better primary shade color
 - fixed several logic bugs with filter mode switching
 
-#### v1.9.0 (2023-03-20)
+#### v1.9.0 (2023-03-20) - The Multi-Sort Badge Update
 
 - added new multi-sort badge number to sort label
 - added new Serbian locales
@@ -126,7 +159,7 @@ import Head from 'next/head';
 
 - Fixed sorting button accessibility issue
 
-#### v1.8.0 (2023-02-16)
+#### v1.8.0 (2023-02-16) - The Edit Dropdowns Update
 
 - Allow `enableEditing` prop and column options to be enabled conditionally per row `(row) => boolean`
 - Added `editVariant` and `editSelectOptions` column options to make it easier to create edit dropdowns
@@ -486,20 +519,6 @@ import Head from 'next/head';
 - V0.19.0 - Data Column Definitions now need an `accessorKey` or a combination of an `id` and `accessorFn` to be used as the key for the data row.
 - V0.19.0 - `instance` was renamed to `table` across all callback functions to be inline with TanStack Table V8.1.
 - V0.18.0 - on...Changed callback props were removed as they were redundant with the on...Change callback props. Hoisting state will be the recommended way to watch for table state changes and react to them.
-
-## Roadmap
-
-### Version 1 Roadmap (2022-2023)
-
-Most of the features that will ever be added in Version 1 have been added. They will continue to be polished, and bugs will continue to be fixed.
-
-One area of focus, however, will be improving the editing features. There is still some room for improvement and quality of life improvements that can be made.
-
-Another large feature that could be added is a "row pinning" feature. It would allow users to pin rows to the top of the table, and would be useful for things like "favorites" or "pinned" rows. It would work very similarly to the "column pinning" feature that is already in the table.
-
-### Version 2 Roadmap (2023)
-
-Version 2 will probably not come out until Material UI v6 is released. It will be developed while Material UI v6 is in alpha, and will be released when Material UI v6 is released.
 
 <br />
 <br />
